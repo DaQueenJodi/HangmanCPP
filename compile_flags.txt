@@ -1,0 +1,6 @@
+-stdlib=libc++
+-I./include
+-I
+/usr/include/c++
+-Wall
+-Wextra
