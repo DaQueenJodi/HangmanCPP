@@ -7,9 +7,10 @@
 struct Word
 {
 	Word(std::string word_string);
-
-	std::string word;
+	~Word();
+	std::string real_word;
 	std::string hidden_word;
+	std::string long_real_word;
 	int char_num;
 private:	
 	std::string stringafy(std::vector<char> char_vector)
