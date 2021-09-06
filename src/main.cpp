@@ -2,13 +2,10 @@
 #include "GameFunctions.hpp"
 #include "Word.hpp"
 
-
+Word* new_word = nullptr;
 
 
 int main(int argc, char const *argv[])
 {
-
-Word* word = new Word("welp");
-
-	Randomizer::print_word(word);
+	new_word = Randomizer::randomize_word("words/words.list");
 }
