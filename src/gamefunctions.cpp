@@ -65,12 +65,33 @@
 			{
 				word->hidden_word[i] = playerGuess; 
 			}
-			/*
-			else
-			{
-				std::cout << std::endl << hidden_word[i] << " != " << playerGuess;
-			}
-			*/
 		}
 	}	
+	void Guesser::guess(std::string playerGuess, Word*& word)
+	{
+		std::string& hidden_word = word->hidden_word;
+		std::string real_word = word->long_real_word;
+		std::string formatted_guess = Utility::format_string(playerGuess, false);
 
+		int first_unknown;
+
+		for (unsigned int i = 0; i < real_word.length(); ++i)
+		{
+			if (hidden_word[i] == '_')
+			{
+				first_unknown = i;
+				break;
+			}
+		}
+
+		std::cout << first_unknown;
+
+		for (unsigned int i = first_unknown; i < real_word.length(); ++i)
+		{
+			if (real_word[i] == formatted_guess[i])
+			{
+				hidden_word[i] = real_word[i];
+			}
+		}
+
+	}
